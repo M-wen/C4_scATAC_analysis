@@ -24,7 +24,7 @@ library(gridExtra)
 library(stringr)
 library(scMCA)
 
-plan("multiprocess", workers = 4)
+plan("multicore", workers = 4)
 options(future.globals.maxSize = 50000 * 1024^2) # for 50 Gb RAM
 
 peak_set <- as.data.frame(fread(args$peak,sep="\t",header = F))
